@@ -1,0 +1,353 @@
+/* Custom style for navbar */
+.navbar-custom {
+    background-color: #064162; /* Set the navbar color */
+    position: sticky;
+    top: 0;  /* Menempatkan navbar di bagian atas */
+    z-index: 1000;  /* Agar navbar berada di atas konten lainnya */
+    width: 100%;
+}
+
+.navbar-home {
+    font-size: 14px; /* Adjust size as needed */
+    font-weight: 400;
+}
+
+/* Adjust the logo size */
+.navbar-logo {
+    width: 45px; /* Adjust width of logo */
+    height: 36px; /* Maintain aspect ratio */
+}
+
+/* Adjust icon size for images */
+.nav-icon {
+    width: 25px; /* Size for navigation icons */
+    height: 25px; /* Maintain aspect ratio */
+}
+
+/* Space between the images */
+.navbar-custom .d-flex {
+    gap: 15px; /* Add spacing between elements */
+}
+
+/* Align the right-side items (images and 'Log out' text) to the far right */
+.navbar-custom .ms-auto {
+    margin-left: auto; /* Align the items to the right end */
+}
+
+/* Style for the white text (Home and Log out) */
+.text-white {
+    color: white !important;
+}
+
+/* body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Mengatur tinggi body untuk seluruh layar */
+    /* background-image: url('{{ asset('img/home.jpg') }}'); /* Menggunakan helper asset() untuk gambar */
+    /* background-repeat: no-repeat; */
+    /* background-position: center center; */
+    /* background-size: cover; Menutupi seluruh layar */
+    /* color: white; Menjadikan teks putih untuk kontras */ */
+/* } */ */
+
+.container {
+    padding-top: 20px; /* Jarak dari bagian atas halaman */
+}
+.container2 {
+    text-align: center; /* Memusatkan teks secara horizontal */
+    display: flex; /* Menggunakan Flexbox untuk memusatkan konten */
+    justify-content: center; /* Memusatkan konten secara horizontal */
+    align-items: flex-start; /* Menyusun konten di bagian atas, sedikit ke atas */
+    height: 60vh; /* Membuat container memenuhi seluruh tinggi layar */
+}
+
+.container2 h3 {
+    margin-top: 60px; /* Memberikan sedikit jarak dari atas kontainer */
+}
+
+
+
+/* Styling untuk form container */
+.search-container {
+    width: 100%;
+    max-width: 750px; /* Sesuaikan lebar maksimal */
+    margin: 50px auto; /* Pusatkan form di halaman */
+    padding: 10px;
+    background-color: #f8f9fa; /* Warna latar belakang */
+    border-radius: 50px; /* Setengah lingkaran di atas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan shadow untuk tampilan lebih elegan */
+}
+
+/* Styling untuk form dalam search-container */
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling untuk setiap field dalam form */
+.search-form select,
+.search-form input[type="date"],
+.search-form button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 30px; /* Membuat sudut form membulat */
+    border: 1px solid #ccc; /* Border standar */
+}
+
+/* Styling untuk button search */
+.search-form button {
+    background-color: #064162; /* Warna background tombol */
+    color: white;
+    border: none; /* Menghilangkan border default */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Hover effect pada button search */
+.search-form button:hover {
+    background-color: #052e42; /* Warna lebih gelap saat hover */
+}
+
+/* Ikon di dalam tombol search */
+.search-form button .bi-search {
+    margin-left: 5px;
+}
+
+/* Styling untuk field select dan input date */
+.search-form select:focus,
+.search-form input[type="date"]:focus {
+    border-color: #064162; /* Warna border saat focus */
+    outline: none; /* Menghilangkan outline default */
+}
+
+/* Styling untuk konten di bawah gambar */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.content-wrapper h1, .content-wrapper p {
+    text-align: center;
+}
+
+.search-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.search-form select, .search-form input, .search-form button {
+    padding: 10px;
+    margin: 10px;
+}
+
+.search-form button {
+    border-radius: 50%;
+    background-color: #064162;
+    color: white;
+    border: none;
+}
+
+.search-form button:hover {
+    background-color: #032b38;
+}
+
+/* Styling untuk rekomendasi tempat wisata */
+.recommendation-section {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.recommendation-section h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #064162;
+}
+
+.place-card {
+    margin: 10px; /* Mengurangi jarak antar card */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan shadow lebih ringan */
+    transition: transform 0.3s ease;
+    background-color: #fff; /* Latar belakang putih untuk card */
+}
+
+.place-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Menjaga gambar tetap proporsional */
+}
+
+.place-card:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.place-card h5 {
+    font-weight: bold; /* Membuat teks lebih tebal */
+    color: #333; /* Warna teks hitam */
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+    font-size: 18px; /* Ukuran font yang sedikit lebih besar */
+}
+
+.place-card p {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #555; /* Warna teks lebih terang untuk deskripsi */
+}
+
+.place-card a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #064162;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.place-card a:hover {
+    background-color: #053848; /* Efek hover pada tombol */
+}
+
+/* Styling untuk Footer */
+.footer {
+    background-color: #f8f9fa; /* Latar belakang abu muda */
+    color: #333; /* Warna teks */
+    border-top: 1px solid #ddd; /* Garis pemisah atas footer */
+    margin-top:100px;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: auto;
+}
+
+.footer .footer-contact h6, .footer .footer-follow h6 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #064162; /* Warna judul */
+}
+
+.footer .footer-contact p, .footer .footer-follow a {
+    font-size: 14px;
+    color: #555;
+}
+
+.footer .footer-follow a {
+    font-size: 18px;
+    color: #064162; /* Warna ikon sosial media */
+    text-decoration: none;
+}
+
+.footer .footer-follow a:hover {
+    color: #0d6efd; /* Warna saat hover */
+}
+
+.footer .container {
+    max-width: 1200px; /* Max lebar kontainer footer */
+}
+
+/* Responsif untuk footer */
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .footer-contact,
+    .footer-follow {
+        margin-bottom: 10px;
+    }
+}
+
+/* Menambahkan jarak setelah footer */
+.footer-space {
+    height: 30px; /* Jarak setelah footer */
+}
+
+/* Styling untuk bagian Copyright */
+.copyright {
+    background-color: #064162; /* Warna navbar */
+    color: white;
+
+    padding: 10px;
+    font-size: 14px;
+}
+
+.bordero {
+    border: none; /*menghapus border tabel*/
+    border-collapse: collapse ;  /*Menggabungkan sel yang bersebelahan*/
+}
+.tho {
+    border: none !important;  
+}
+.tdo {
+    border: none !important; 
+}
+
+.abu {
+    color: #6D7993; 
+    width: 250px;
+    text-align: center; /* Memusatkan teks secara horizontal */
+}
+.abuu {
+    color: #000000; 
+    width: 250px;
+    text-align: center;
+}
+
+
+.tombol {
+    background-color: #4E898D;   /* Latar belakang berwarna hijau muda */
+    color: white;                 /* Teks berwarna putih */
+    border: none;                 /* Menghilangkan border default */
+    padding: 10px 20px;           /* Memberikan padding di sekitar teks */
+    font-size: 16px;              /* Ukuran font */
+    font-family: Arial, sans-serif; /* Font untuk tombol */
+    cursor: pointer;             /* Menunjukkan bahwa elemen bisa diklik */
+    border-radius: 5px;           /* Membuat sudut tombol melengkung */
+    transition: background-color 0.3s ease;  /* Efek transisi untuk perubahan warna */
+}
+
+/* Efek ketika hover (menyentuh tombol) */
+.tombol:hover {
+    background-color: #1F5659;    /* Mengubah warna latar saat dihover (hijau tua) */                /* Pastikan teks tetap putih saat dihover */
+}
+
+/* Menambahkan margin pada baris tabel */
+.h {
+    height:50px;
+}
+
+/* Flexbox untuk menempatkan tombol di kanan */
+.d-flex {
+    display: flex;               /* Mengaktifkan Flexbox */
+    justify-content: flex-end;   /* Menempatkan tombol ke ujung kanan */
+}
+
+/* Mengatur tinggi tombol */
+.bten {
+    height: 45px; /* Menyesuaikan tinggi tombol */
+    font-size: 16px; /* Ukuran font tombol */
+    padding-left: 20px; /* Padding kiri */
+    padding-right: 20px; /* Padding kanan */
+    background-color: #4E898D;   /* Latar belakang berwarna hijau muda */
+    color: white;
+}
+.bten:hover {
+    background-color: #1F5659;    /* Mengubah warna latar saat dihover (hijau tua) */ 
+    color: white;               /* Pastikan teks tetap putih saat dihover */
+}
+
+
