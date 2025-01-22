@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('username', 50);           
             $table->string('password', 100);          
             $table->string('email', 100);             
-            $table->string('gender', 20);            
+            $table->enum('gender', ['laki-laki', 'perempuan']);             
             $table->integer('no_identitas')->nullable(); //nanti buat untuk dia boleh kosong         
             $table->date('tanggal_lahir');             
             $table->integer('no_tlp');                 

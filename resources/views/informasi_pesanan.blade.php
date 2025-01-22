@@ -41,21 +41,25 @@
 
     <div class="container mt-4 pb-5 ">
         <h1><span style="font-family: 'Times New Roman';">Informasi Data Pesanan</span></h1>
-        <form action="{{ url('/pembayaran') }}">
+       
+        <form action="{{ route('informasi_pesanan.store') }}" method="POST">
+            @csrf
+            <!-- Input untuk Kapal ID dan informasi lainnya -->
+            <input type="hidden" name="id_kapal" value="{{ $kapal->id_kapal }}">
             <div class="row p-3">
                 <div class="col-5 mb-3 mt-2">
                     <label for="disabledTextInput" class="form-label">Nama Penumpang</label>
-                    <input type="text" id="disabledTextInput" class="form-control " placeholder="Masukkan Nama">
+                    <input type="text" id="nama_penumpang" name="nama_penumpang" class="form-control "  placeholder="Masukkan Nama" >
                 </div>
                 <div class="col-1 mb-3 mt-2">
                 </div>
                 <div class="col-5 mt-2">
                     <label for="disabledTextInput" class="form-label"><span style="font-family: 'Times New Roman';">No. Identitas </span></label>
-                    <input type="text" id="disabledTextInput" class="form-control" placeholder="Masukkan No. Identitas">
+                    <input type="text" id="no_identitas" name="no_identitas" class="form-control" placeholder="Masukkan No. Identitas">
                 </div>
                 <div class="col-5 mt-4 ">
                     <label for="disabledSelect" class="form-label">Kabin</label>
-                    <select id="disabledSelect" class="form-select">
+                    <select id="kabin" name="kabin" class="form-select" >
                         <option>Pilih Kabin</option>
                         <option>Ekonomi 1</option>
                         <option>Ekonomi 2</option>
@@ -69,14 +73,14 @@
                 </div>
                 <div class="col-5 mt-4 ">
                     <label for="disabledSelect" class="form-label">Gender</label>
-                    <select id="disabledSelect" class="form-select">
+                    <select id="gender" name="gender" class="form-select">
                         <option>Pilih Gender</option>
                         <option>Laki-laki</option>
                         <option>Perempuan</option>
                     </select>
                 </div>
                 <div class="col-11 mt-4 d-flex justify-content-end">
-                    <button class="btn bten ">Pesan</button>
+                    <button type="submit" class="btn bten " id="pay-button">Pesan</button>
                 </div>      
             </div>
         </form>
@@ -111,6 +115,9 @@
     <div class="copyright">
         <p>Copyright @2024 Kelompok 2 Testing dan Implementasi Sistem</p>
     </div>
+
+    {{-- <script src="https://app.sandbox.midtrans.com/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script> --}}
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

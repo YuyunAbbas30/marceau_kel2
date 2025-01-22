@@ -3,7 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\KapalController;
 use App\Http\Controllers\TiketController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\InformasiPesananController;
 
 
 Route::get('/', function () {
@@ -37,4 +40,16 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/add', [BlogController::class, 'add']);
 Route::post('/blog/create', [BlogController::class, 'create']);
 
-Route::get('/mencari_tiket', [TiketController::class, 'index']);
+// Route::get('/mencari_tiket', [KapalController::class, 'index']);
+Route::resource('mencari_tiket', KapalController::class);
+Route::resource('informasi_pesanan', InformasiPesananController::class);
+Route::resource('pembayaran', PembayaranController::class);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

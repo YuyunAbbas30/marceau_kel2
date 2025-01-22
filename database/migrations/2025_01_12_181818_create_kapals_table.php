@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('kapals', function (Blueprint $table) {
             $table->id('id_kapal');
-            $table->foreignId('id_tiket')->constrained('tikets', 'id_tiket');
             $table->string('nama_kapal', 100); 
             $table->string('kapasitas', 255); 
+            $table->string('kabin', 150);
+            $table->decimal('harga', 10, 3);
             $table->dateTime('waktu_keberangkatan');
             $table->dateTime('waktu_sampai');
             $table->string('lokasi_keberangkatan', 100);

@@ -52,6 +52,11 @@
     </div>
     <div class="container">
         <div class="mt-5">
+            @if($data->isEmpty()) <!-- Jika data kosong -->
+                    <h2 style="font-family: 'Times New Roman'; font-size: 40px; color: rgb(1, 21, 74); text-align: center;">
+                        TIKET BELUM TERSEDIA
+                    </h2>
+                @else
             <div class="col-12 col-lg-6">
                     <table class="table bordero" method="GET">
                         <tbody>
@@ -73,7 +78,7 @@
                                 </tr>
                             @endforeach 
                         </tbody>
-                    </table>
+                    </table> 
             </div>
             <div class="container">
                 <div class="mt-5">
@@ -87,7 +92,8 @@
                             <td class="tdo"></td>
                         </tr>
                         @foreach($data as $dat)
-                        <form  action="{{ url('/informasi_pesanan') }}" method="GET">
+                        {{-- <form action="{{ url('/informasi_pesanan') }}" method="GET"> --}}
+                        <form  action="{{ route('informasi_pesanan.create') }}" method="GET">
                             @csrf
                             <tr >
                                 <!-- Mengatur rowspan untuk 'nama kapal' dan 'harga' -->
@@ -95,12 +101,11 @@
                                 <td class="tdo abuu pt-3"><span style="font-family: 'Geneva'; font-size:22px;">{{ \Carbon\Carbon::parse($dat->waktu_keberangkatan)->format('H:i') }}</span></td>
                                 <td class="tdo abuu pt-3" rowspan="3"><i class="bi bi-arrow-right" style="font-size: 35px;"></i></td>
                                 <td class="tdo abuu pt-3"><span style="font-family: 'Geneva'; font-size:22px;">{{ \Carbon\Carbon::parse($dat->waktu_sampai)->format('H:i') }}</span></td>
-                                @if ($dat->tiket)
-                                <td class="tdo abuu pt-3" rowspan="2"><span style="font-family: 'Geneva'; font-size:22px;">Rp. {{ $dat->tiket->first()->harga ?? 'Tidak Tersedia'}}</span></td>
-                                @endif
+                                <td class="tdo abuu pt-3" rowspan="2"><span style="font-family: 'Geneva'; font-size:22px;">Rp. {{ $dat->harga ?? 'Tidak Tersedia'}}</span></td> 
+                                <input type="hidden" name="id_kapal" value="{{ $dat->id_kapal }}">
                                 <td class="tdo" rowspan="2">
-                                    <a href="informasi_pesanan"><button type="submit" class="tombol">Pesan</button></a>
-                                </td>
+                                    <button type="submit" class="tombol">Pesan</button>
+                                    </td>
                             </tr>
                             <tr>
                                 <!-- Menampilkan tanggal keberangkatan -->
@@ -122,6 +127,7 @@
                         </form>
                         @endforeach 
                     </table>
+                    @endif
                 </div>
             </div>
         </div>

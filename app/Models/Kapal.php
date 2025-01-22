@@ -14,14 +14,22 @@ class Kapal extends Model
     use HasFactory;
 
     protected $table = 'kapals';
+    protected $primaryKey = 'id_kapal';
     
-    // public function jadwal(): BelongsTo
-    // {
-    //     return $this->belongsTo(Jadwal::class, 'id_kapal', 'id_jadwal_kapal'); 
-    // }
-    public function tiket(): HasMany
+    protected $fillable = [
+        'nama_kapal',
+        'kapasitas',
+        'kabin',
+        'harga',
+        'waktu_keberangkatan',
+        'waktu_sampai',
+        'lokasi_keberangkatan',
+        'lokasi_tujuan',
+    ];
+
+    public function informasiPesanan(): HasMany
     {
-        return $this->hasMany(Tiket::class, 'id_tiket', 'id_kapal'); 
+        return $this->hasMany(InformasiPesanan::class, 'id_kapal', 'id_kapal'); 
     }
 }
 

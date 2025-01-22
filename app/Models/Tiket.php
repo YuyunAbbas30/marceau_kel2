@@ -21,8 +21,8 @@ class Tiket extends Model
     // {
     //     return $this->hasMany(Jadwal::class, 'id_jadwal_kapal', 'id_tiket'); 
     // }
-    public function kapal(): BelongsTo
-    {
-        return $this->belongsTo(Kapal::class, 'id_tiket', 'id_kapal'); 
-    }
+    // public function kapal(): BelongsTo
+    // {
+    //     return $this->belongsTo(Kapal::class, 'id_tiket', 'id_kapal'); 
+    // }
 }
